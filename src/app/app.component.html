@@ -1,3 +1,28 @@
-<div style="text-align: center;">
+<div style="text-align: center">
   <h1>Welcome to angular17</h1>
+  <div>
+    <a routerLink="/">Home</a>  | 
+    <a routerLink="about">About</a> |
+    <a [routerLink]="[{outlets:{outlet2:['aboutnew']}}]">About new</a> |
+    <a routerLink="contact">Contact</a> |
+    <a routerLink="student">Student</a>
+  </div>
+  <h2>how are you?</h2>
+
+  <button (click)="login()">Login</button>
+  <button (click)="logout()">log out</button>
+  @if(isLoggedId){
+  <div>user is LoggedIn</div>
+  }@else {
+  <div>user is log out</div>
+  }<br />
+  <!--<div class="app-employee"></div>-->
+
+  <div style="background-color: yellow;">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div style="background-color: red;">
+    <router-outlet name="outlet2"></router-outlet>
+  </div>
 </div>
